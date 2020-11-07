@@ -31,29 +31,46 @@ public class Transaction {
 	DebitCredit debitedOrCredited;
 	
 	@Column(name="to_account")
-	Account toAccount;
+	long toAccount;
 	
 	@Column(name="from_Account")
-	Account fromAccount;
+	long fromAccount;
 
 	@ManyToOne
 	@JoinColumn(name = "account_number")
 	Account account;
 	
-	public Account getFromAccount() {
-		return fromAccount;
-	}
+	
+//	public Account getFromAccount() {
+//		return fromAccount;
+//	}
+//
+//	public void setFromAccount(Account fromAccount) {
+//		this.fromAccount = fromAccount;
+//	}
+//
+//	public Account getToAccount() {
+//		return toAccount;
+//	}
+//
+//	public void setToAccount(Account toAccount) {
+//		this.toAccount = toAccount;
+//	}
 
-	public void setFromAccount(Account fromAccount) {
-		this.fromAccount = fromAccount;
-	}
-
-	public Account getToAccount() {
+	public long getToAccount() {
 		return toAccount;
 	}
 
-	public void setToAccount(Account toAccount) {
+	public void setToAccount(long toAccount) {
 		this.toAccount = toAccount;
+	}
+
+	public long getFromAccount() {
+		return fromAccount;
+	}
+
+	public void setFromAccount(long fromAccount) {
+		this.fromAccount = fromAccount;
 	}
 
 	public long getTransactionId() {
